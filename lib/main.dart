@@ -21,11 +21,28 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body:Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/aking.png')
+            )
+          ),
+        ),
+      ),
+    );
   }
 }
 
