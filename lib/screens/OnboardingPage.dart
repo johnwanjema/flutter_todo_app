@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-
+import 'loginPage.dart';
 class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -164,6 +164,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   openLoginPage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()))
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
   }
 }
