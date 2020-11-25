@@ -73,12 +73,29 @@ class _loginPageState extends State<loginPage> {
               style: TextStyle(
                   fontSize: 20
               ),
-
             ),
-            
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                InkWell(
+                  onTap: opnForgotPasswordPage(),
+                  child: Text('Forgot Password?',style: TextStyle(
+                      color: Colors.red,
+                    fontSize: 17
+                  ),),
+                )
+              ],
+            )
           ],
         ),
       ),
     );
+  }
+
+  opnForgotPasswordPage(){
+    // Navigator.push(context, MaterialPageRoute(builder:(context)=> ForgotPassword()))
   }
 }
