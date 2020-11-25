@@ -50,30 +50,26 @@ class _loginPageState extends State<loginPage> {
             ),
             Text(
               'User Name',
-              style: TextStyle(fontSize: 23,),
+              style: TextStyle(
+                fontSize: 23,
+              ),
             ),
             TextField(
-              decoration: InputDecoration(
-                 hintText: 'John Wanjema'
-              ),
-              style: TextStyle(
-                fontSize: 20
-              ),
+              decoration: InputDecoration(hintText: 'John Wanjema'),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 40,
             ),
             Text(
               'Password',
-              style: TextStyle(fontSize: 23,),
+              style: TextStyle(
+                fontSize: 23,
+              ),
             ),
             TextField(
-              decoration: InputDecoration(
-                  hintText: 'Enter Password'
-              ),
-              style: TextStyle(
-                  fontSize: 20
-              ),
+              decoration: InputDecoration(hintText: 'Enter Password'),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 40,
@@ -82,13 +78,31 @@ class _loginPageState extends State<loginPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 InkWell(
-                  onTap: opnForgotPasswordPage(),
-                  child: Text('Forgot Password?',style: TextStyle(
-                      color: Colors.red,
-                    fontSize: 17
-                  ),),
+                  onTap: openForgotPasswordPage,
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(fontSize: 16, color: Colors.red),
+                  ),
                 )
               ],
+            ),
+            Expanded(
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(1000),
+                    // borderRadius: BorderRadius.all(
+                    //   Radius.circular(7),
+                    // ),
+                    color: Colors.red
+                  ),
+                  child: Text('Log In',style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white
+                  ),),
+                ),
+              ),
             )
           ],
         ),
@@ -96,7 +110,8 @@ class _loginPageState extends State<loginPage> {
     );
   }
 
-  opnForgotPasswordPage(){
-    Navigator.push(context, MaterialPageRoute(builder:(context)=> ForgotPassword()))
+  void openForgotPasswordPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ForgotPassword()));
   }
 }
