@@ -92,6 +92,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       SizedBox(
                         height: 30,
                       ),
+                      Text('Login',style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                      ),)
                     ],
                   ),
               )
