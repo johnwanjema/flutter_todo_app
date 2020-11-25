@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/screens/forgotPassword.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -96,6 +97,6 @@ class _loginPageState extends State<loginPage> {
   }
 
   opnForgotPasswordPage(){
-    // Navigator.push(context, MaterialPageRoute(builder:(context)=> ForgotPassword()))
+    Navigator.push(context, MaterialPageRoute(builder:(context)=> ForgotPassword()))
   }
 }
