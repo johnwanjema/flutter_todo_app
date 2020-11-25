@@ -70,7 +70,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       InkWell(
-                        onTap: (){},
+                        onTap: openLoginPage,
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 20,horizontal: 100),
                           decoration: BoxDecoration(
@@ -161,5 +161,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
   setCurrentPage(int value) {
     currentPage = value++;
     setState(() {});
+  }
+
+  openLoginPage(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()))
   }
 }
