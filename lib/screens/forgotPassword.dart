@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ResetPassword.dart';
+
 class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,8 +59,9 @@ class _forgotPasswordState extends State<forgotPassword> {
             SizedBox(
               height: 40,
             ),
-            Expanded(
-              child: Center(
+            Center(
+              child: InkWell(
+                onTap: openResetPassword,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
                   decoration: BoxDecoration(
@@ -79,5 +82,8 @@ class _forgotPasswordState extends State<forgotPassword> {
         ),
       ),
     );
+  }
+  void openResetPassword(){
+    Navigator.push(context,MaterialPageRoute(builder: (context)=> ResetPassword()));
   }
 }
