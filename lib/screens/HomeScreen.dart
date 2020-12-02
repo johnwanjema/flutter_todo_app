@@ -25,11 +25,64 @@ class _homePageState extends State<homePage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                AppBar(
-                  backgroundColor: Color(0xfff96060),
-                )
+              AppBar(
+                elevation: 0,
+                title: Text(
+                  'Work List',
+                  style: TextStyle(fontSize: 30),
+                ),
+                backgroundColor: Color(0xfff96060),
+                actions: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.short_text,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+              Container(
+                height: 70,
+                color: Color(0xfff96060),
+                child:Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: (){},
+                          child: Text('Today',style: TextStyle(
+                              fontSize:10,
+                              color: Colors.white
+                          ),),
+                        ) ,SizedBox(height: 10,),
+                      Container(
+                        height: 4,width: 120,color: Colors.white,
+                      )
+                      ],
+                    ), Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: (){},
+                          child: Text('Monthly',style: TextStyle(
+                              fontSize:10,
+                              color: Colors.white
+                          ),),
+                        ) ,SizedBox(height: 10,),
+                        Container(
+                          height: 4,width: 120,color: Colors.white,
+                        )
+                      ],
+                    )
+                  ],
+                ) ,
+              )
             ],
-          )
+          ),
+
         ],
       ),
     );
