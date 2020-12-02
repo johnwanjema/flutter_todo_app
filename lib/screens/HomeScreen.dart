@@ -17,6 +17,7 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  String filterType = 'today';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,44 +46,62 @@ class _homePageState extends State<homePage> {
               Container(
                 height: 70,
                 color: Color(0xfff96060),
-                child:Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         InkWell(
-                          onTap: (){},
-                          child: Text('Today',style: TextStyle(
-                              fontSize:10,
-                              color: Colors.white
-                          ),),
-                        ) ,SizedBox(height: 10,),
-                      Container(
-                        height: 4,width: 120,color: Colors.white,
-                      )
+                          onTap: () {
+                            setState(() {
+                              filterType = 'today';
+                            });
+                          },
+                          child: Text(
+                            'Today',
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 4,
+                          width: 120,
+                          color: filterType == 'today' ? Colors.white : Colors.transparent ,
+                        )
                       ],
-                    ), Column(
+                    ),
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         InkWell(
-                          onTap: (){},
-                          child: Text('Monthly',style: TextStyle(
-                              fontSize:10,
-                              color: Colors.white
-                          ),),
-                        ) ,SizedBox(height: 10,),
+                          onTap: () {
+                            setState(() {
+                              filterType = 'monthly';
+                            });
+                          },
+                          child: Text(
+                            'Monthly',
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Container(
-                          height: 4,width: 120,color: Colors.white,
+                          height: 4,
+                          width: 120,
+                          color:filterType == 'monthly' ? Colors.white : Colors.transparent ,
                         )
                       ],
                     )
                   ],
-                ) ,
+                ),
               )
             ],
           ),
-
         ],
       ),
     );
