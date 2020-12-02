@@ -19,6 +19,19 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+                AppBar(
+                  backgroundColor: Color(0xfff96060),
+                )
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
