@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/screens/HomeScreen.dart';
 import 'package:flutter_todo_app/screens/OnboardingPage.dart';
 
 void main() => runApp(MyApp());
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
   void openOnBoard(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Onboarding()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
   }
 }
 
