@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-class HomePage extends StatelessWidget {
+import 'package:table_calendar/table_calendar.dart';class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +19,7 @@ class homePage extends StatefulWidget {
 
 class _homePageState extends State<homePage> {
   String filterType = 'today';
+  CalendarController Cntrl = new CalendarController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,8 +101,10 @@ class _homePageState extends State<homePage> {
                     )
                   ],
                 ),
-              )
-            ],
+              ),
+              (filterType == 'monthly') ? TableCalendar(calendarController: Cntrl,
+              startingDayOfWeek: StartingDayOfWeek.monday,initialCalendarFormat: CalendarFormat.week,
+              ) :Container(),
           ),
         ],
       ),
