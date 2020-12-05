@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 import 'package:table_calendar/table_calendar.dart';
 
@@ -145,12 +146,11 @@ class _homePageState extends State<homePage> {
                           Text(
                             'Today ${months[today.month - 1]} , ${today.day}/${today.year}',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
-                          )
+                          ),
+                          taskWidget(Colors.red, 'qwerty12', '9:00 am'),
+                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
+                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
                         ],
-                        // taskWidget(
-                        //   color:Colors.red,
-                        //   'meeting','9:00 Am'
-                        // ),
                       ),
                     )
                   ],
@@ -161,5 +161,34 @@ class _homePageState extends State<homePage> {
         ],
       ),
     );
+  }
+
+  Slidable taskWidget(Color color, String description, String time) {
+    return Slidable(
+        actionPane: SlidableDrawerActionPane(),
+        actionExtentRatio: .3,
+        child: Container(
+          height: 80,
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(.03),
+                offset: Offset(0, 9),
+                blurRadius: 20,
+                spreadRadius: 1)
+          ]),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20 ),
+                height: 25,width: 25,decoration: BoxDecoration(
+                color: Colors.white ,
+                shape: BoxShape.circle,
+                border: Border.all(color: color,width: 4),
+              ),
+              )
+            ],
+          ),
+        ));
   }
 }
