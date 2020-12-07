@@ -147,48 +147,176 @@ class _homePageState extends State<homePage> {
                             'Today ${months[today.month - 1]} , ${today.day}/${today.year}',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
                           ),
-                          taskWidget(Colors.red, 'qwerty12', '9:00 am'),
-                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
-                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
+                          taskWidget(Colors.red, 'Meeting with dev', '09:00'),
+                          taskWidget(Colors.blue, 'class at D1', '10:00'),
+                          taskWidget(Colors.blue, 'Take medicine', '14:00'),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
+            Container(
+              height: 110,
+              child: Stack(
+                children: [
+                  Positioned(
+                    bottom: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      height: 90,
+                      width: MediaQuery.of(context).size.width,
+                      color: Color(0xfff96060),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.check_circle,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'My tasks',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.menu,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Menu',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 80,
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.account_circle,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Profile',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.content_paste,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Quick tasks',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ]),
         ],
       ),
     );
   }
 
-  Slidable taskWidget(Color color, String description, String time) {
+  Slidable taskWidget(Color color, String title, String time) {
     return Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: .3,
-        child: Container(
-          height: 80,
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          decoration: BoxDecoration(color: Colors.white, boxShadow: [
-            BoxShadow(
-                color: Colors.black.withOpacity(.03),
-                offset: Offset(0, 9),
-                blurRadius: 20,
-                spreadRadius: 1)
-          ]),
-          child: Row(
-            children: [
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 20 ),
-                height: 25,width: 25,decoration: BoxDecoration(
-                color: Colors.white ,
+      actionPane: SlidableDrawerActionPane(),
+      actionExtentRatio: .3,
+      child: Container(
+        height: 80,
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(
+              color: Colors.black.withOpacity(.03),
+              offset: Offset(0, 9),
+              blurRadius: 20,
+              spreadRadius: 1)
+        ]),
+        child: Row(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              height: 25,
+              width: 25,
+              decoration: BoxDecoration(
+                color: Colors.white,
                 shape: BoxShape.circle,
-                border: Border.all(color: color,width: 4),
+                border: Border.all(color: color, width: 4),
               ),
-              )
-            ],
-          ),
-        ));
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                ),
+                Text(time, style: TextStyle(color: Colors.grey, fontSize: 18))
+              ],
+            ),
+            Expanded(
+              child: Container(),
+            ),
+            Container(height: 50, width: 5, color: color)
+          ],
+        ),
+      ),
+      secondaryActions: [
+        IconSlideAction(
+          caption: 'Edit',
+          color: Colors.white,
+          icon: Icons.edit,
+          onTap: () {},
+        ),
+        IconSlideAction(
+          caption: 'Delete',
+          color: color,
+          icon: Icons.delete,
+          onTap: () {},
+        ),
+      ],
+    );
   }
 }
