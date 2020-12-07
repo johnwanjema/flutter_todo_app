@@ -147,9 +147,12 @@ class _homePageState extends State<homePage> {
                             'Today ${months[today.month - 1]} , ${today.day}/${today.year}',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
                           ),
-                          taskWidget(Colors.red, 'qwerty12', '9:00 am'),
-                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
-                          taskWidget(Colors.blue, 'qwerty12', '9:00 am'),
+                          taskWidget(
+                              Colors.red, 'Meeting with dev', '09:00'),
+                          taskWidget(
+                              Colors.blue,'class at D1', '10:00'),
+                          taskWidget(
+                              Colors.blue,  'Take medicine', '14:00'),
                         ],
                       ),
                     )
@@ -163,7 +166,8 @@ class _homePageState extends State<homePage> {
     );
   }
 
-  Slidable taskWidget(Color color, String description, String time) {
+  Slidable taskWidget(
+      Color color,  String title, String time) {
     return Slidable(
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: .3,
@@ -180,13 +184,30 @@ class _homePageState extends State<homePage> {
           child: Row(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20 ),
-                height: 25,width: 25,decoration: BoxDecoration(
-                color: Colors.white ,
-                shape: BoxShape.circle,
-                border: Border.all(color: color,width: 4),
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                height: 25,
+                width: 25,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: color, width: 4),
+                ),
               ),
-              )
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(color: Colors.black, fontSize: 18),
+                  ),
+                  Text(time, style: TextStyle(color: Colors.grey, fontSize: 18))
+                ],
+              ),
+              Expanded(
+                child: Container(),
+              ),
+              Container(height: 50, width: 5, color: color)
             ],
           ),
         ));
