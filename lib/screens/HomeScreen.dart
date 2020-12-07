@@ -217,7 +217,12 @@ class _homePageState extends State<homePage> {
           color: Colors.white,
           icon: Icons.edit,
           onTap: (){},
-        )
+        ), IconSlideAction(
+          caption: 'Delete',
+          color: color,
+          icon: Icons.delete,
+          onTap: (){},
+        ),
       ],
 
     );
