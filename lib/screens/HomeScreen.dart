@@ -155,7 +155,7 @@ class _homePageState extends State<homePage> {
                               Colors.blue,  'Take medicine', '14:00'),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -210,6 +210,16 @@ class _homePageState extends State<homePage> {
               Container(height: 50, width: 5, color: color)
             ],
           ),
-        ));
+        ),
+      secondaryActions: [
+        IconSlideAction(
+          caption: 'Edit',
+          color: Colors.white,
+          icon: Icons.edit,
+          onTap: (){},
+        )
+      ],
+
+    );
   }
 }
