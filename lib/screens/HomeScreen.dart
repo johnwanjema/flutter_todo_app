@@ -38,6 +38,7 @@ class _homePageState extends State<homePage> {
     'NOV',
     'DEC'
   ];
+  String taskPop = 'close';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,7 +168,7 @@ class _homePageState extends State<homePage> {
                       padding: EdgeInsets.all(20),
                       height: 90,
                       width: MediaQuery.of(context).size.width,
-                      color: Color(0xfff96060),
+                      color: Colors.deepPurple,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -249,14 +250,79 @@ class _homePageState extends State<homePage> {
                         ],
                       ),
                     ),
+                  ),
+                  Positioned(
+                    bottom: 25,
+                    left: 0,
+                    right: 0,
+                    child: InkWell(
+                        onTap: openTaskPopUp,
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [Color(0xfff96060), Colors.red]),
+                              shape: BoxShape.circle),
+                          child: Center(
+                            child: Text(
+                              '+',
+                              style:
+                                  TextStyle(fontSize: 40, color: Colors.white),
+                            ),
+                          ),
+                        )),
                   )
                 ],
               ),
             )
           ]),
+          Container(
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.black.withOpacity(.3),
+              child: Center(
+                child: InkWell(
+                  onTap: closeTaskPopUp,
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * .3,
+                    width: MediaQuery.of(context).size.width * .7,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(13),
+                        ),
+                        color: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(height: 1,),InkWell(onTap:(){} ,child: Container(
+                          child: Text('Add Task',style: TextStyle(
+                            fontSize: 18
+                          ),),
+                        ),)
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
+  }
+
+  openTaskPopUp() {
+    taskPop = 'Open';
+    setState(() {});
+  }
+
+  closeTaskPopUp() {
+    taskPop = 'close';
+    setState(() {});
   }
 
   Slidable taskWidget(Color color, String title, String time) {
