@@ -167,7 +167,7 @@ class _homePageState extends State<homePage> {
                       padding: EdgeInsets.all(20),
                       height: 90,
                       width: MediaQuery.of(context).size.width,
-                      color: Color(0xfff96060),
+                      color: Colors.deepPurple,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -249,6 +249,28 @@ class _homePageState extends State<homePage> {
                         ],
                       ),
                     ),
+                  ),
+                  Positioned(
+                    bottom: 25,
+                    left: 0,
+                    right: 0,
+                    child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [Color(0xfff96060), Colors.red]),
+                              shape: BoxShape.circle),
+                          child: Center(
+                            child: Text('+' ,style: TextStyle(
+                              fontSize: 40,color: Colors.white
+                            ),),
+                          ),
+                        )),
                   )
                 ],
               ),
