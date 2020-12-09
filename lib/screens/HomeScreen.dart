@@ -267,9 +267,11 @@ class _homePageState extends State<homePage> {
                                   colors: [Color(0xfff96060), Colors.red]),
                               shape: BoxShape.circle),
                           child: Center(
-                            child: Text('+' ,style: TextStyle(
-                              fontSize: 40,color: Colors.white
-                            ),),
+                            child: Text(
+                              '+',
+                              style:
+                                  TextStyle(fontSize: 40, color: Colors.white),
+                            ),
                           ),
                         )),
                   )
@@ -277,21 +279,50 @@ class _homePageState extends State<homePage> {
               ),
             )
           ]),
+          Container(
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.black.withOpacity(.3),
+              child: Center(
+                child: InkWell(
+                  onTap: closeTaskPopUp,
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * .3,
+                    width: MediaQuery.of(context).size.width * .7,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(13),
+                        ),
+                        color: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(height: 1,),InkWell(onTap:(){} ,child: Container(
+                          child: Text('Add Task',style: TextStyle(
+                            fontSize: 18
+                          ),),
+                        ),)
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
-  openTaskPopUp(){
-      taskPop = 'Open';
-    setState(() {
 
-    });
+  openTaskPopUp() {
+    taskPop = 'Open';
+    setState(() {});
   }
-  closeTaskPopUp(){
-    taskPop = 'close';
-    setState(() {
 
-    });
+  closeTaskPopUp() {
+    taskPop = 'close';
+    setState(() {});
   }
 
   Slidable taskWidget(Color color, String title, String time) {
