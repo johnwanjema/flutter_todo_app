@@ -38,6 +38,7 @@ class _homePageState extends State<homePage> {
     'NOV',
     'DEC'
   ];
+  String taskPop = 'close';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -255,7 +256,7 @@ class _homePageState extends State<homePage> {
                     left: 0,
                     right: 0,
                     child: InkWell(
-                        onTap: () {},
+                        onTap: openTaskPopUp,
                         child: Container(
                           height: 80,
                           width: 80,
@@ -279,6 +280,18 @@ class _homePageState extends State<homePage> {
         ],
       ),
     );
+  }
+  openTaskPopUp(){
+      taskPop = 'Open';
+    setState(() {
+
+    });
+  }
+  closeTaskPopUp(){
+    taskPop = 'close';
+    setState(() {
+
+    });
   }
 
   Slidable taskWidget(Color color, String title, String time) {
