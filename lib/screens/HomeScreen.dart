@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/screens/NewCheckList.dart';
+import 'package:flutter_todo_app/screens/NewNote.dart';
+import 'package:flutter_todo_app/screens/NewTask.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -302,7 +305,7 @@ class _homePageState extends State<homePage> {
                           height: 1,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: openNewTask,
                           child: Container(
                             child: Text(
                               'Add Task',
@@ -316,7 +319,7 @@ class _homePageState extends State<homePage> {
                           color: Colors.black.withOpacity(0.2),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: openNewNote,
                           child: Container(
                             child: Text(
                               'Add Quick Note',
@@ -330,7 +333,7 @@ class _homePageState extends State<homePage> {
                           color: Colors.black.withOpacity(0.2),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: openNewChecklist,
                           child: Container(
                             child: Text(
                               'Add Checklist',
@@ -362,6 +365,8 @@ class _homePageState extends State<homePage> {
     taskPop = 'close';
     setState(() {});
   }
+
+
 
   Slidable taskWidget(Color color, String title, String time) {
     return Slidable(
@@ -422,5 +427,17 @@ class _homePageState extends State<homePage> {
         ),
       ],
     );
+  }
+
+  openNewChecklist(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewCheckList()));
+  }
+
+  openNewNote(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewNote()));
+  }
+
+  openNewTask(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewTask()));
   }
 }
