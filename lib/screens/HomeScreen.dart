@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/screens/NewCheckList.dart';
+import 'package:flutter_todo_app/screens/NewNote.dart';
+import 'package:flutter_todo_app/screens/NewTask.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -280,7 +283,7 @@ class _homePageState extends State<homePage> {
             )
           ]),
           Container(
-            child: Container(
+            child:(taskPop == 'open') ? Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               color: Colors.black.withOpacity(.3),
@@ -298,17 +301,55 @@ class _homePageState extends State<homePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SizedBox(height: 1,),InkWell(onTap:(){} ,child: Container(
-                          child: Text('Add Task',style: TextStyle(
-                            fontSize: 18
-                          ),),
-                        ),)
+                        SizedBox(
+                          height: 1,
+                        ),
+                        InkWell(
+                          onTap: openNewTask,
+                          child: Container(
+                            child: Text(
+                              'Add Task',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 1,
+                          margin: EdgeInsets.symmetric(horizontal: 30),
+                          color: Colors.black.withOpacity(0.2),
+                        ),
+                        InkWell(
+                          onTap: openNewNote,
+                          child: Container(
+                            child: Text(
+                              'Add Quick Note',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 1,
+                          margin: EdgeInsets.symmetric(horizontal: 30),
+                          color: Colors.black.withOpacity(0.2),
+                        ),
+                        InkWell(
+                          onTap: openNewChecklist,
+                          child: Container(
+                            child: Text(
+                              'Add Checklist',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                       SizedBox(
+                         height: 1,
+                       )
                       ],
                     ),
                   ),
                 ),
               ),
-            ),
+            ):Container(),
           )
         ],
       ),
@@ -316,7 +357,7 @@ class _homePageState extends State<homePage> {
   }
 
   openTaskPopUp() {
-    taskPop = 'Open';
+    taskPop = 'open';
     setState(() {});
   }
 
@@ -324,6 +365,8 @@ class _homePageState extends State<homePage> {
     taskPop = 'close';
     setState(() {});
   }
+
+
 
   Slidable taskWidget(Color color, String title, String time) {
     return Slidable(
@@ -384,5 +427,17 @@ class _homePageState extends State<homePage> {
         ),
       ],
     );
+  }
+
+  openNewChecklist(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewCheckList()));
+  }
+
+  openNewNote(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewNote()));
+  }
+
+  openNewTask(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewTask()));
   }
 }
