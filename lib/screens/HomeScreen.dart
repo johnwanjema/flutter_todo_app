@@ -280,7 +280,7 @@ class _homePageState extends State<homePage> {
             )
           ]),
           Container(
-            child: Container(
+            child:(taskPop == 'open') ? Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               color: Colors.black.withOpacity(.3),
@@ -298,17 +298,55 @@ class _homePageState extends State<homePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SizedBox(height: 1,),InkWell(onTap:(){} ,child: Container(
-                          child: Text('Add Task',style: TextStyle(
-                            fontSize: 18
-                          ),),
-                        ),)
+                        SizedBox(
+                          height: 1,
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            child: Text(
+                              'Add Task',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 1,
+                          margin: EdgeInsets.symmetric(horizontal: 30),
+                          color: Colors.black.withOpacity(0.2),
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            child: Text(
+                              'Add Quick Note',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 1,
+                          margin: EdgeInsets.symmetric(horizontal: 30),
+                          color: Colors.black.withOpacity(0.2),
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            child: Text(
+                              'Add Checklist',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                       SizedBox(
+                         height: 1,
+                       )
                       ],
                     ),
                   ),
                 ),
               ),
-            ),
+            ):Container(),
           )
         ],
       ),
@@ -316,7 +354,7 @@ class _homePageState extends State<homePage> {
   }
 
   openTaskPopUp() {
-    taskPop = 'Open';
+    taskPop = 'open';
     setState(() {});
   }
 
