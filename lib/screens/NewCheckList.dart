@@ -21,6 +21,7 @@ class newCheckList extends StatefulWidget {
 }
 
 class _newCheckListState extends State<newCheckList> {
+  bool checked = false;
   List<int>  selectedList = [];
    @override
   Widget build(BuildContext context) {
@@ -99,13 +100,39 @@ class _newCheckListState extends State<newCheckList> {
                               onChanged: (bool value){
                                 setState(() {
                                   if(value){
-                                    selectedList.add()
+                                    selectedList.add(1);
                                   }else{
-                                    selectedList.remove()
+                                    selectedList.remove(1);
                                   }
                                 });
                               },
-                              value: selectedList.container(i),
+                              value: selectedList.contains(1),
+                            ),
+                            CheckboxListTile(
+                              title: Text('List item 2'),controlAffinity: ListTileControlAffinity.leading,
+                              onChanged: (bool value){
+                                setState(() {
+                                  if(value){
+                                    selectedList.add(2);
+                                  }else{
+                                    selectedList.remove(2);
+                                  }
+                                });
+                              },
+                              value: selectedList.contains(2),
+                            ),
+                            CheckboxListTile(
+                              title: Text('List item 3'),controlAffinity: ListTileControlAffinity.leading,
+                              onChanged: (bool value){
+                                setState(() {
+                                  if(value){
+                                    selectedList.add(3);
+                                  }else{
+                                    selectedList.remove(3);
+                                  }
+                                });
+                              },
+                              value: selectedList.contains(3),
                             ),
                             Text(
                               'Colour',
