@@ -16,7 +16,7 @@ created application using
 - Dart
 
 ## Images
-![Home Page](/assets/home_page.png )
+![Home Page](/assets/home_page.png =10x20)
 ![Pop Up ](/assets/pop_up.png )
 ![Add Task](/assets/add_task.png )
 ![Add Quick Note](/assets/quick_note.png )
