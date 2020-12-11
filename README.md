@@ -1,16 +1,29 @@
-# flutter_todo_app
+# Flutter Todo App
+
+#### Created by _John Wanjema_
 
 A new Flutter application.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This in a flutter application that allows users to add notes, where you can write all the important to-dos, save pictures and checklists, and tick off the tasks after they're done.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+created application using
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+- Dart
+
+## Support and contact details
+
+contact me through jonwanjema@gmail.com for inquries and contributions.
+
+## License
+
+LICENSE(https://github.com/johnwanjema/pitches/blob/master/LICENSE)
+
+## Acknowledgments
+
+Kaushik Chandru
+
