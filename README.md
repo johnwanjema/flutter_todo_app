@@ -16,11 +16,11 @@ created application using
 - Dart
 
 ## Images
-![Home Page](/assests/home_page.png )
-![Pop Up ](/assests/pop_up.png )
-![Add Task](/assests/add_task.png )
-![Add Quick Note](/assests/quick_note.png )
-![Add Checklist](/assests/checklist.png )
+![Home Page](/assets/home_page.png )
+![Pop Up ](/assets/pop_up.png )
+![Add Task](/assets/add_task.png )
+![Add Quick Note](/assets/quick_note.png )
+![Add Checklist](/assets/checklist.png )
 
 ## Support and contact details
 
