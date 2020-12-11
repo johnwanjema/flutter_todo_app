@@ -15,6 +15,13 @@ created application using
 - Flutter
 - Dart
 
+## Images
+![Home Page](/assests/home_page.png )
+![Pop Up ](/assests/pop_up.png )
+![Add Task](/assests/add_task.png )
+![Add Quick Note](/assests/quick_note.png )
+![Add Checklist](/assests/checklist.png )
+
 ## Support and contact details
 
 contact me through jonwanjema@gmail.com for inquries and contributions.
